@@ -7,6 +7,10 @@ import Banner from "../../components/Banner/Index";
 import Title from "../../components/Title/Index";
 import Card from "../../components/Card/Index";
 import Footer from "../../components/Footer/Index";
+import siara from '../../components/Card/assets/SiaraTech.jpeg'
+import rdsummit from '../../components/Card/assets/rdsummit.jpeg'
+import firefestival from '../../components/Card/assets/firefestival.png'
+import websummit from '../../components/Card/assets/websummit.jpeg'
 
 const BannerContainer = styled.div`
   position: relative;
@@ -84,10 +88,10 @@ const Events = () => {
       </Container>
       <Title style={{ marginBottom: "1.5rem" }}>EVENTOS</Title>
       <CardContainer>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card image={siara} title="Siara Tech Summit"/>
+        <Card image={rdsummit} title="Rd Summit"/>
+        <Card image={firefestival} title="Brasil Summit"/>
+        <Card image={websummit} title="Web Summit"/>
       </CardContainer>
       <StyledFooter>
         <Footer/>

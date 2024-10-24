@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 import SubTitle from "../SubTitle/Index";
 import Title from "../Title/Index";
-import siara from "./assets/siaratech.jpg";
 
 const CardContainer = styled.div`
   position: relative;
@@ -37,13 +36,18 @@ const TextOverlay = styled.div`
   z-index: 1;
 `;
 
-const Card = () => {
+interface CardProps {
+  image: string;
+  title: string;
+}
+
+const Card: React.FC<CardProps> = ({ image, title }) => {
   return (
     <CardContainer>
-      <BackgroundImage src={siara} alt="imagem do evento siara tech summit" />
+      <BackgroundImage src={image} alt={`imagem do evento ${title}`} />
       <TextOverlay>
-        <Title color="white">Siara Tech Summit</Title>
-        <SubTitle color="white">Data: 25 de Julho, 2024</SubTitle>
+        <Title color="white">{title}</Title>
+        <SubTitle color="white"></SubTitle>
       </TextOverlay>
     </CardContainer>
   );
