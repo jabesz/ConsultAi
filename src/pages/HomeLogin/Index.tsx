@@ -12,7 +12,7 @@ const HomeLogin = () => {
       <Title
         style={{
           position: "absolute",
-          top: "37%",
+          top: "36%",
           left: "50%",
           transform: "translate(-50%, -50%)",
           color: "white",

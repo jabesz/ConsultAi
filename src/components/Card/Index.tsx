@@ -29,8 +29,8 @@ const TextOverlay = styled.div`
   height: 20%;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centraliza horizontalmente */
-  justify-content: center; /* Centraliza verticalmente */
+  align-items: center;
+  justify-content: center;
   padding: 1rem;
   background-color: #120a8f;
   border-radius: 10px;

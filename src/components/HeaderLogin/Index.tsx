@@ -1,4 +1,3 @@
-// components/HeaderLogin.js
 import { useContext } from "react";
 import { AuthContext } from "../../context/Context";
 import styled from "styled-components";

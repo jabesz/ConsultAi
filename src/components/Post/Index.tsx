@@ -51,10 +51,6 @@ const ButtonStyled = styled(Button)`
   }
 `;
 
-const Footer = styled.footer`
-  margin-top: 20px;
-`;
-
 const TagPost = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");

@@ -9,7 +9,7 @@ import Card from "../../components/Card/Index";
 import Footer from "../../components/Footer/Index";
 
 const BannerContainer = styled.div`
-  position: relative; /* Permite que os filhos sejam posicionados absolutamente em relação a este container */
+  position: relative;
   width: 100%;
 `;
 

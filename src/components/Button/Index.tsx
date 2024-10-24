@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface ButtonProps {
-  width?: string; // Propriedade opcional para definir a largura
+  width?: string;
 }
 
 const Button = styled.button<ButtonProps>`

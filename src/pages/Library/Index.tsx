@@ -12,7 +12,7 @@ const PageLibrary = () => {
       <Title
         style={{
           position: "absolute",
-          top: "35%",
+          top: "36%",
           left: "50%",
           transform: "translate(-50%, -50%)",
           color: "white",

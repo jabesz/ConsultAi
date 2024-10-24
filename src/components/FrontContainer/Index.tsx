@@ -4,7 +4,7 @@ const Container = styled.div`
   background-color: #ffffff;
   width: 90%;
   max-width: 600px;
-  height: 800px; /* Aumentando a altura do container */
+  height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
