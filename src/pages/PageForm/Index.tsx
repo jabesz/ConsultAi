@@ -15,6 +15,18 @@ const BlueText = styled.span`
   color: #120a8f;
 `;
 
+const SignupContainer = styled(SubTitle)`
+  text-align: center;
+  margin-top: 10px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem; /* Ajuste de tamanho para telas menores */
+  }
+`;
+
 export default function PageForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -62,15 +74,19 @@ export default function PageForm() {
             Esqueceu sua senha?
           </a>
         </SubTitle>
-        <SubTitle color="#000000">
+        <SignupContainer color="#000000">
           Ainda não tem conta?
-          <a
-            href="/cadastro"
-            style={{ color: "#120a8f", textDecoration: "none" }}
+          <Link
+            to="/cadastro"
+            style={{
+              color: "#120a8f",
+              textDecoration: "none",
+              marginLeft: "5px",
+            }}
           >
-            <BlueText> Faça seu cadastro!</BlueText>
-          </a>
-        </SubTitle>
+            <BlueText>Faça seu cadastro!</BlueText>
+          </Link>
+        </SignupContainer>
       </Container>
     </MainContainer>
   );

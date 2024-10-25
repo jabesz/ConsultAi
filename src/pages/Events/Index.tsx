@@ -7,10 +7,12 @@ import Banner from "../../components/Banner/Index";
 import Title from "../../components/Title/Index";
 import Card from "../../components/Card/Index";
 import Footer from "../../components/Footer/Index";
-import siara from '../../components/Card/assets/SiaraTech.jpeg'
-import rdsummit from '../../components/Card/assets/rdsummit.jpeg'
-import firefestival from '../../components/Card/assets/firefestival.png'
-import websummit from '../../components/Card/assets/websummit.jpeg'
+import siara from "../../components/Card/assets/SiaraTech.jpeg";
+import rdsummit from "../../components/Card/assets/rdsummit.jpeg";
+import firefestival from "../../components/Card/assets/firefestival.png";
+import websummit from "../../components/Card/assets/websummit.jpeg";
+import { useAuth } from "../../context/Context";
+import HeaderLogin from "../../components/HeaderLogin/Index";
 
 const BannerContainer = styled.div`
   position: relative;
@@ -41,6 +43,14 @@ const FieldsContainer = styled.div`
   }
 `;
 
+const StyledDigitizationField = styled(DigitizationField)`
+  width: 100%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
 const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -51,36 +61,45 @@ const StyledFooter = styled.footer`
   margin-top: 2rem;
 `;
 
+const StyledTitle = styled(Title)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  font-size: 3rem;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    top: 40%;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+    top: 32%;
+  }
+`;
 
 const Events = () => {
   const [events, setEvents] = useState("");
+  const { isAuthenticated } = useAuth();
 
   return (
-    <div>
-      <Header />
+    <>
+      {isAuthenticated ? <HeaderLogin /> : <Header />}
       <BannerContainer>
         <Banner />
-        <Title
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            color: "white",
-            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.6)",
-            zIndex: 1,
-          }}
-        >
-          Eventos
-        </Title>
+        <StyledTitle>Eventos</StyledTitle>
       </BannerContainer>
       <Container>
         <FieldsContainer>
-          <DigitizationField
+          <StyledDigitizationField
             valor={events}
             onChange={setEvents}
             placeholder="Busque por eventos"
-            largura="1070px"
             hasIcon={true}
           />
           <Button>Buscar</Button>
@@ -88,15 +107,15 @@ const Events = () => {
       </Container>
       <Title style={{ marginBottom: "1.5rem" }}>EVENTOS</Title>
       <CardContainer>
-        <Card image={siara} title="Siara Tech Summit"/>
-        <Card image={rdsummit} title="Rd Summit"/>
-        <Card image={firefestival} title="Brasil Summit"/>
-        <Card image={websummit} title="Web Summit"/>
+        <Card image={siara} title="Siara Tech Summit" />
+        <Card image={rdsummit} title="Rd Summit" />
+        <Card image={firefestival} title="Brasil Summit" />
+        <Card image={websummit} title="Web Summit" />
       </CardContainer>
       <StyledFooter>
-        <Footer/>
+        <Footer />
       </StyledFooter>
-    </div>
+    </>
   );
 };
 

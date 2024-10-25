@@ -7,7 +7,7 @@ import Main from "../../components/Main/Index";
 
 const StyledTitle = styled(Title)`
   position: absolute;
-  top: 36%;
+  top: 37%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -18,12 +18,12 @@ const StyledTitle = styled(Title)`
 
   @media (max-width: 768px) {
     font-size: 2rem;
-    top: 40%; /* Ajuste de posição para telas menores */
+    top: 40%;
   }
 
   @media (max-width: 480px) {
     font-size: 1.5rem;
-    top: 45%; /* Ajuste adicional para telas ainda menores */
+    top: 60%;
   }
 `;
 

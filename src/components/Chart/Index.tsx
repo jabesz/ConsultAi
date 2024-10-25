@@ -10,21 +10,23 @@ import {
 } from "chart.js";
 import styled from "styled-components";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 const Container = styled.div`
   width: 60%;
   margin: 0 auto;
   padding: 2rem 0;
-  background-color: #f0f0f0f0;
-`;
+  background-color: #f0f0f0;
 
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    padding: 1rem 0;
+  }
+`;
 
 const Main = styled.main`
   margin: 2rem 0;
@@ -48,7 +50,7 @@ const Chart = () => {
     <>
       <Main>
         <Container>
-          <Title color="#000000" >Análise de engajamento</Title>
+          <Title color="#000000">Análise de engajamento</Title>
           <Bar data={data} />
         </Container>
       </Main>
